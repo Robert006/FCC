@@ -23,8 +23,12 @@ window.addEventListener('scroll', function (evt) {
         }
     } else {
         var call = document.querySelector('#callme');
+        var download = document.querySelector('#downPDF')
         call.onclick = function () {
             window.location.href = "tel:15188236937";
+        }
+        download.onclick = function () {
+            window.open('../songs/index.pdf');
         }
     }
 })
