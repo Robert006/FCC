@@ -2,7 +2,6 @@
      v2.0 | 20110126
      License: none (public domain)
 */
-
  html,
  body,
  div,
@@ -78,7 +77,6 @@
  }
 
  /* HTML5 display-role reset for older browsers */
-
  article,
  aside,
  details,
@@ -296,8 +294,13 @@
  .main .thx {
      text-align: center;
      margin-top: 30px;
+     line-height: 1.2;
      margin-bottom: 10px;
      font-size: 14px;
+ }
+
+ .moblie-operate {
+     display: none;
  }
 
  .mt-sm {
@@ -310,4 +313,47 @@
 
  .mr-xs {
      margin-left: 5px;
+ }
+
+ /* 响应式处理 */
+ @media (max-width:768px) {
+     .container {
+         width: 100%;
+     }
+
+     header,
+     .content aside {
+         display: none;
+     }
+
+     .content .main {
+         padding: 15px;
+     }
+
+     .moblie-operate {
+         margin-top: 20px;
+         text-align: center;
+         display: block;
+     }
+
+     .main .thx {
+         margin-top: 20px;
+         line-height: 23px;
+     }
+
+     .moblie-operate li {
+         font-size: 14px;
+         display: inline-block;
+         height: 30px;
+         color: #333;
+         width: 100px;
+         line-height: 30px;
+         padding: 0 15px;
+         border-radius: 3px;
+         background: lightsalmon;
+     }
+
+     .moblie-operate li+li {
+         margin-left: 26px;
+     }
  }

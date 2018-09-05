@@ -1,23 +1,31 @@
 window.addEventListener('scroll', function (evt) {
-    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-    var sidebar = document.querySelector('aside');
-    var mainbody = document.querySelector('.main');
-    var avatar = document.querySelector('.avatar img');
-    var scale, vheight;
-    if (scrollTop >= 118 && scrollTop <= 290) {
-        scale = 1 - ((scrollTop - 118) / 172).toFixed(3);
-        if (scale < 0.06) {
-            scale = 0;
+    var isWeb = !(/mobile/i.test(navigator.userAgent));
+    if (isWeb) {
+        var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+        var sidebar = document.querySelector('aside');
+        var mainbody = document.querySelector('.main');
+        var avatar = document.querySelector('.avatar img');
+        var scale, vheight;
+        if (scrollTop >= 118 && scrollTop <= 290) {
+            scale = 1 - ((scrollTop - 118) / 172).toFixed(3);
+            if (scale < 0.06) {
+                scale = 0;
+            }
+            vheight = scrollTop - 150;
+            avatar.style.transform = 'translate(-50%,' + vheight + 'px) scale(' + scale + ')';
+        } else if (scrollTop >= 300) {
+            avatar.style.transform = 'scale(0)';
+            sidebar.className = 'fixed';
+            mainbody.className = 'main fixed'
+        } else {
+            sidebar.className = '';
+            mainbody.className = 'main'
         }
-        vheight = scrollTop - 150;
-        avatar.style.transform = 'translate(-50%,' + vheight + 'px) scale(' + scale + ')';
-    } else if (scrollTop >= 300) {
-        avatar.style.transform = 'scale(0)';
-        sidebar.className = 'fixed';
-        mainbody.className = 'main fixed'
     } else {
-        sidebar.className = '';
-        mainbody.className = 'main'
+        var call = document.querySelector('#callme');
+        call.onclick = function () {
+            window.location.href = "tel:15188236937";
+        }
     }
 })
 window.onload = function () {
