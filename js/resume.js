@@ -31,15 +31,16 @@ window.addEventListener('scroll', function (evt) {
 window.onload = function () {
     var h = new Date().getHours();
     var words = 'GOOD ';
-    if (0 < h <= 10) {
+    console.log(h)
+    if (0 < h && h <= 10) {
         words += 'MORNING';
-    } else if (10 < h <= 12) {
+    } else if (10 < h && h <= 12) {
         words += 'NOON';
-    } else if (12 < h <= 18) {
+    } else if (12 < h && h <= 18) {
         words += 'AFTERNOON';
-    } else if (18 < h <= 22) {
+    } else if (18 < h && h <= 22) {
         words += 'EVENING';
-    } else if (22 < h <= 23) {
+    } else if (22 < h && h <= 23) {
         words += 'NIGHT';
     }
     document.getElementById('greeting').innerHTML = words;
