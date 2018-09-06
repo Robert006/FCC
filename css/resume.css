@@ -311,8 +311,12 @@
      margin-bottom: 10px;
  }
 
- .mr-xs {
+ .ml-xs {
      margin-left: 5px;
+ }
+
+ .mr-xs {
+     margin-right: 5px;
  }
 
  /* 响应式处理 */

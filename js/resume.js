@@ -28,7 +28,7 @@ window.addEventListener('scroll', function (evt) {
             window.location.href = "tel:15188236937";
         }
         download.onclick = function () {
-            window.open('../songs/index.pdf');
+            window.open('./songs/index.pdf');
         }
     }
 })
